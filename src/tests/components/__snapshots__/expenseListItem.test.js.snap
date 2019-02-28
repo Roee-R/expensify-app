@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expense list item tests should render expenses with fixture data 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="./edit/1"
+  >
+    <h3>
+      1
+      . 
+      Gaz Bill
+    </h3>
+  </Link>
+  <p>
+    123
+    $ - 
+    11
+  </p>
+</div>
+`;

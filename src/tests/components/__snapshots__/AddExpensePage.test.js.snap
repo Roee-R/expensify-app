@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expense page tests should render AddExpensePage correctly 1`] = `
+<div>
+  <h1>
+    Wellcome from my add expense component
+  </h1>
+  <ExpenseForm
+    onSubmit={[Function]}
+  />
+</div>
+`;

@@ -1,0 +1,21 @@
+html {
+    font-size: 62.5%; // settin up the font to 10px cuz the default is 16
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: $m-size; // conver from 10 base px font-size to X1.6=26
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: .5;
+}
+
+.is-active {
+    font-weight: bold;
+}

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expense list test should render ExpenseList with expenses 1`] = `
+<div>
+  <Connect(ExpenseListFilter) />
+  <ExpenseListItem
+    amount={123}
+    createdAt={11}
+    description="Gaz Bill"
+    id={1}
+    index={0}
+    key="1"
+    note="10/12"
+  />
+  <ExpenseListItem
+    amount={555}
+    createdAt={-259199989}
+    description="Electric Bill"
+    id={2}
+    index={1}
+    key="2"
+    note="2/12"
+  />
+  <ExpenseListItem
+    amount={323}
+    createdAt={259200011}
+    description="Credit Card"
+    id={3}
+    index={2}
+    key="3"
+    note="1/11"
+  />
+</div>
+`;
+
+exports[`Expense list test should render expense lst with exmpty message 1`] = `
+<div>
+  <Connect(ExpenseListFilter) />
+</div>
+`;
