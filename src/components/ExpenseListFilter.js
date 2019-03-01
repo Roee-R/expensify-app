@@ -59,7 +59,7 @@ const mapStateToProps = (state)=>({ // function that transfer states to componen
 const mapDispatchToProps = (dispatch) =>({
     setStartDate: (startDate)=>dispatch(setStartDate(startDate)),
     setEndDate: (endDate)=>dispatch(setEndDate(endDate)),
-    addTextFilter: (e)=>dispatch(addTextFilter(e.target.value)),
+    addTextFilter: (e)=>dispatch(addTextFilter(value)),
     sortByAmount: ()=>dispatch(sortByAmount()),
     sortByDate: ()=>dispatch(sortByDate())
 })
