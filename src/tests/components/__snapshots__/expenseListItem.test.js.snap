@@ -13,9 +13,9 @@ exports[`Expense list item tests should render expenses with fixture data 1`] = 
     </h3>
   </Link>
   <p>
-    123
-    $ - 
-    11
+    $1.23
+    -
+    Jan 1st, 1970
   </p>
 </div>
 `;
