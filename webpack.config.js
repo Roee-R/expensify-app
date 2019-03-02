@@ -6,7 +6,7 @@ module.exports = (env) =>{ // the function will called with env veribe
   return {
     entry: './src/app.js',
     output: {
-      path: path.resolve(__dirname, 'public'),
+      path: path.resolve(__dirname, 'public', 'dist'),
       filename: 'bundle.js'
     },
     module: {
@@ -46,7 +46,8 @@ module.exports = (env) =>{ // the function will called with env veribe
     devtool: isProdaction? 'source-map' : 'inline-source-map',
     devServer:{
       contentBase: path.resolve(__dirname, 'public'),
-      historyApiFallback: true
+      historyApiFallback: true,
+      publicPath: '/dist/'
     }
   }; 
 }
