@@ -1,8 +1,8 @@
 const path = require('path')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // for seperate css files
 
 module.exports = (env) =>{ // the function will called with env veribe
-  const isProdaction = env==='prodaction'
+  const isProdaction = env==='prodaction' // get the env from the script
   return {
     entry: './src/app.js',
     output: {
@@ -18,7 +18,7 @@ module.exports = (env) =>{ // the function will called with env veribe
       {
         test: /\.s?css/,
         use: [{
-          loader: MiniCssExtractPlugin.loader
+          loader: MiniCssExtractPlugin.loader 
           },
           {
             loader: "css-loader", // translates CSS into CommonJS
