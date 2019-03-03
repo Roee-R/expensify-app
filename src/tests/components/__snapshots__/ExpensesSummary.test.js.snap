@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpensesSummary tests should retrun summary of one expense 1`] = `
+<p>
+  Viewing 
+  1
+   
+  expense 
+  totalling 
+  $0.11
+</p>
+`;
+
+exports[`ExpensesSummary tests should retrun summary of several expenses 1`] = `
+<p>
+  Viewing 
+  3
+   
+  expenses 
+  totalling 
+  $1.11
+</p>
+`;

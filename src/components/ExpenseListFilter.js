@@ -17,7 +17,9 @@ export class ExpenseListFilter extends React.Component {
         this.props.setEndDate(endDate);
     }
 
-    onTextChange = (e)=>this.props.addTextFilter(e.target.value);
+    onTextChange = (e)=>{
+        return this.props.addTextFilter(e.target.value)
+    };
 
     onSortChange = (e)=>{
         if(e.target.value==='amount')
@@ -28,7 +30,7 @@ export class ExpenseListFilter extends React.Component {
     render(){
         return ( // Component that connect to the store
             <div>
-                <input type="text" Value={this.props.filters.sortBy}
+                <input type="text" Value={this.props.filters.text}
                 onChange={this.onTextChange}/>
                 <select value={this.props.filters.sortBy}
                 onChange={this.onSortChange}>
@@ -59,7 +61,7 @@ const mapStateToProps = (state)=>({ // function that transfer states to componen
 const mapDispatchToProps = (dispatch) =>({
     setStartDate: (startDate)=>dispatch(setStartDate(startDate)),
     setEndDate: (endDate)=>dispatch(setEndDate(endDate)),
-    addTextFilter: (e)=>dispatch(addTextFilter(value)),
+    addTextFilter: (value)=>dispatch(addTextFilter(value)),
     sortByAmount: ()=>dispatch(sortByAmount()),
     sortByDate: ()=>dispatch(sortByDate())
 })

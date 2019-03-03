@@ -3,7 +3,6 @@
 exports[`Expense list filter tests should render ExpenseListFilter 1`] = `
 <div>
   <input
-    Value="date"
     onChange={[Function]}
     type="text"
   />
@@ -125,7 +124,6 @@ exports[`Expense list filter tests should render ExpenseListFilter 1`] = `
 exports[`Expense list filter tests should render ExpenseListFilter with alt data 1`] = `
 <div>
   <input
-    Value="date"
     onChange={[Function]}
     type="text"
   />
