@@ -8,7 +8,7 @@ import ExpenseListFilter from './ExpenseListFilter'; // filtering by name
 export const ExpenseList = (props) =>(
     <div>
         <ExpenseListFilter />
-        {props.expenses.length>=0 
+        {props.expenses.length>0 
         ? (props.expenses.map((expense)=>{
             return (<ExpenseListItem key={expense.id} 
             index={props.expenses.indexOf(expense)}
