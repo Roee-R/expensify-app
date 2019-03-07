@@ -1,12 +1,28 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import {startAddExpense,addExpense, removeExpense, editExpense} from '../../actions/expenses';
+import {
+    startAddExpense,
+    addExpense, 
+    removeExpense, 
+    editExpense, 
+    setExpenses,
+    startSetExpenses
+} 
+    from '../../actions/expenses';
 import expenses from '../fixtures/expenses';
 import database from '../../firebase/firebase';
 
 describe('Expense actions', ()=>{
     const createMockStore = configureMockStore([thunk]); // array of middlleware 
+
+    beforeEach((done)=>{
+        const expenseData = {};
+        expenses.forEach(({id,description, note,amount,createdAt})=>{
+            expenseData[id]={description, note,amount,createdAt};
+        })
+        database.ref('expenses').set(expenseData).then(()=>done());
+    })
 
     test('Should remove exoense action object', ()=>{
         const action = removeExpense({id: '123abc'})
@@ -89,19 +105,23 @@ describe('Expense actions', ()=>{
         })
     })
 
-    // test('Should add new expense with default value',()=>{
-    //     const action=addExpense()
-    //     const expenseObj= {
-    //     type: 'ADD_EXPENSE',   
-    //     expenses:{
-    //         id: expect.any(String),
-    //         description: '',
-    //         note: '',
-    //         amount: 0,
-    //         createdAt: 0
-    //     }
-    // }
-    //     expect(action).toEqual((expenseObj));
+    test('should set expense action object with data', ()=>{
+        const action = setExpenses(expenses);
+        expect(action).toEqual({
+            type: 'SET_EXPENSES',
+            expenses
+        })
+    })
 
-    // })
+    test('should fatch the expenses from firebase', (done)=>{
+        const store = createMockStore();
+        store.dispatch(startSetExpenses()).then(()=>{
+            const action = store.getActions();
+            expect(action[0]).toEqual({
+                type: 'SET_EXPENSES',
+                expenses
+            })
+            done();
+        })
+    })
 })

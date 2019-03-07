@@ -8,7 +8,7 @@ exports[`Edit Expense page testing should render edit expense page 1`] = `
         "amount": 123,
         "createdAt": 11,
         "description": "Gaz Bill",
-        "id": 1,
+        "id": "1",
         "note": "10/12",
       }
     }
