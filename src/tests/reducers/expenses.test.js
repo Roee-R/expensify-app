@@ -30,7 +30,7 @@ describe('Expenses reducer tests', ()=>{
         const action = {
         type: 'ADD_EXPENSE'    ,
         id: 4,
-        expenses: {
+        expense: {
             id: 4,
             description: 'Shoping',
             note: '2/25',
@@ -39,7 +39,7 @@ describe('Expenses reducer tests', ()=>{
         }
     }
         const state = expensesReducer(expenses, action);
-        expect(state).toEqual([...expenses, action.expenses]);
+        expect(state).toEqual([...expenses, action.expense]);
     })
 
     test('should edit expense', ()=>{

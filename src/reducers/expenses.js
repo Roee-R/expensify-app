@@ -6,7 +6,7 @@ const expensesReduserDefaultState = []; // default array state
 const expensesReduser = (state = expensesReduserDefaultState, action)=>{ // action is the extra propeties that we delivar via reducer object TYPES functions like editExpense
     switch(action.type){
         case 'ADD_EXPENSE':{
-            return [...state, action.expenses]; // ...state is new syntax for arrays "spearign array"
+            return [...state, action.expense]; // ...state is new syntax for arrays "spearign array"
         }
         case 'REMOVE_EXPENSE':{
             return [...state].filter(( {id} )=>id!==action.id);

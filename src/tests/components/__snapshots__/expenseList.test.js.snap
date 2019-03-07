@@ -36,5 +36,8 @@ exports[`Expense list test should render ExpenseList with expenses 1`] = `
 exports[`Expense list test should render expense lst with exmpty message 1`] = `
 <div>
   <Connect(ExpenseListFilter) />
+  <h3>
+    No expenses
+  </h3>
 </div>
 `;

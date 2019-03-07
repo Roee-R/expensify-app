@@ -11,6 +11,7 @@ export const ExpenseDashboardPage = (props) =>{
     return(
     <div>
         <h1>Wellcome to my DashBoard component</h1>
+
         <ExpensesSummary 
             size={props.expensesSize}
             sum={props.sum}/>

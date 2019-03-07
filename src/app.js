@@ -8,6 +8,7 @@ import {addExpense,removeExpense} from '../src/actions/expenses';
 
 import {addTextFilter} from '../src/actions/filters';
 import getVisibleExpanse from '../src/selectors/expenses'
+import './firebase/firebase'; // improt our firebase db
 
 import './styles/styles.scss'
 import 'normalize.css/normalize.css'
@@ -22,8 +23,6 @@ const jsx = (
 )
 
 ReactDOM.render(jsx,document.getElementById('app'));
-
-
 
 store.dispatch(addExpense({
     description:'Water bill',
@@ -40,15 +39,15 @@ store.dispatch(addExpense({
 store.dispatch(addExpense({
     description:'Wifi bill',
     note: '1/11',
-    amount: 200,
+    amount: 333,
     createdAt: 350
 }))
-let shopExp = store.dispatch(addExpense({
-    description:'Shops',
-    note: '22/11/19',
-    amount: 500,
-    createdAt: 150
-}))
+// let shopExp = store.dispatch(addExpense({
+//     description:'Shops',
+//     note: '22/11/19',
+//     amount: 500,
+//     createdAt: 150
+// }))
 
 // store.dispatch(addTextFilter('s'));
 
