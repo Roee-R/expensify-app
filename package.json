@@ -14,7 +14,7 @@
     "heroku-postbuild": "yarn run build:prod"
   },
   "engines": {
-    "node": "10.15.0",
+    "node": "11.11.0",
     "yarn": "1.13.0",
     "npm": "6.4.1"
   },
@@ -28,6 +28,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "css-loader": "^2.1.0",
     "express": "^4.16.4",
+    "fast-sass-loader": "^1.4.7",
     "firebase": "^5.8.5",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",

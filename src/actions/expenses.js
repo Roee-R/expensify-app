@@ -26,12 +26,20 @@ import database from '../firebase/firebase'; // import database
    };
 
 // Remove expanse
-export const removeExpense = ({id})=>(
+export const removeExpense = ( {id} = {})=>(
         { // return OBJECT
             type: 'REMOVE_EXPENSE',
             id
         }   
     )
+
+export const startRemoveExpense = ( {id} = {})=>{
+    return (dispatch)=>{
+        return database.ref(`expenses/${id}`).remove().then(()=>{
+            dispatch(removeExpense({ id }))
+        })
+    }
+}    
     
 // Edit expanse
 
@@ -39,12 +47,12 @@ export const editExpense = (id, updates) =>({
     type: 'EDIT_EXPENSE',
     id,
     updates
-})
+});
 
 export const setExpenses = (expenses)=>({
     type: 'SET_EXPENSES',
     expenses
-})
+});
 
 export const startSetExpenses = ()=>{
     return (dispatch)=>{
@@ -57,4 +65,4 @@ export const startSetExpenses = ()=>{
             dispatch(setExpenses(expensesArray));
         })
     }
-}
+};

@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import {startSetExpenses,addExpense,removeExpense} from '../src/actions/expenses';
+import {startSetExpenses,addExpense,startAddExpense} from '../src/actions/expenses';
 
 import {addTextFilter} from '../src/actions/filters';
 import getVisibleExpanse from '../src/selectors/expenses'
@@ -25,18 +25,20 @@ const jsx = (
 ReactDOM.render(<p>Loading...</p>,document.getElementById('app'));
 
 store.dispatch(startSetExpenses()).then(()=>{
+    // store.dispatch(startAddExpense({
+    //     description:'new',
+    //     note: '1/11',
+    //     amount: 500,
+    //     createdAt: 150
+    // })).then(()=>{
+    //     ReactDOM.render(jsx,document.getElementById('app'));
+    // })
     ReactDOM.render(jsx,document.getElementById('app'));
 })
 
 
 
 
-// store.dispatch(addExpense({
-//     description:'Water bill',
-//     note: '1/11',
-//     amount: 500,
-//     createdAt: 150
-// }))
 
 
 
