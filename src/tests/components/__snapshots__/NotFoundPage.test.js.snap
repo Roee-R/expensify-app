@@ -2,6 +2,12 @@
 
 exports[`Not found page test should render not found page 1`] = `
 <div>
-  Wellcome from my help page component
+  404 - 
+  <Link
+    replace={false}
+    to="/"
+  >
+    Go home
+  </Link>
 </div>
 `;
