@@ -14,7 +14,9 @@ import * as firebase from 'firebase' // import all the methods from firebase to 
 
     const database = firebase.database();
 
-    export { firebase, database as default };
+    const GoogleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+    export { firebase, GoogleAuthProvider, database as default };
 
     // //part TWO
 

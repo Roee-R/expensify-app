@@ -10,8 +10,8 @@ import selectExpensesTotal from '../selectors/expenses-total';
 export const ExpenseDashboardPage = (props) =>{
     return(
     <div>
-        <h1>Wellcome to my DashBoard component</h1>
-
+    <h1>Wellcome to my DashBoard component</h1>
+    <button>TimeButton</button>
         <ExpensesSummary 
             size={props.expensesSize}
             sum={props.sum}/>

@@ -7,6 +7,8 @@ import database from '../firebase/firebase'; // import database
     expense
 })
 
+ // Async action to DB Add expense 
+ // fetching the data and the dispatch action
    export const startAddExpense = (expensesData={}) =>{
        return (dispatch)=>{
            const {
@@ -48,6 +50,14 @@ export const editExpense = (id, updates) =>({
     id,
     updates
 });
+
+export const startEditExpense = (id, updates) =>{
+    return(dispatch)=>{
+        return database.ref(`expenses/${id}`).update(updates).then(()=>{
+            dispatch(editExpense(id, updates));
+        });
+    }
+}
 
 export const setExpenses = (expenses)=>({
     type: 'SET_EXPENSES',

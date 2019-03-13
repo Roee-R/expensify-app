@@ -1,11 +1,12 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
+import configureMockStore from 'redux-mock-store'; // mock store for Async action test
+import thunk from 'redux-thunk'; // midlleware function
 
 import {
     startAddExpense,
     addExpense, 
     removeExpense, 
-    editExpense, 
+    editExpense,
+    startEditExpense, 
     setExpenses,
     startSetExpenses,
     startRemoveExpense
@@ -15,7 +16,7 @@ import expenses from '../fixtures/expenses';
 import database from '../../firebase/firebase';
 
 describe('Expense actions', ()=>{
-    const createMockStore = configureMockStore([thunk]); // array of middlleware 
+    const createMockStore = configureMockStore([thunk]); // add your middlewares like `redux-thunk`
 
     beforeEach((done)=>{
         const expenseData = {};
@@ -61,6 +62,31 @@ describe('Expense actions', ()=>{
         expect(action.updates).toEqual({
             Description: 'Hello World',
             note: 'First World'
+        })
+    })
+
+    test('should edit expense from firebase', (done)=>{
+        const store = createMockStore();
+        const id = expenses[1].id;
+        const updates = {
+            description: 'test update',
+            note: 'check'
+        }
+        store.dispatch(startEditExpense(id, updates)).then(()=>{
+            const action = store.getActions();
+            expect(action[0]).toEqual({
+                type: 'EDIT_EXPENSE',
+                id,
+                updates
+            })
+            return database.ref(`expenses/${id}`).once('value');
+        }).then((snapshot)=>{
+            expect(snapshot.val()).toEqual({
+                ...updates, 
+                amount:expenses[1].amount, 
+                createdAt:expenses[1].createdAt
+            });
+            done();
         })
     })
 
