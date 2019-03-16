@@ -8,6 +8,7 @@ import {startSetExpenses,addExpense,startAddExpense} from '../src/actions/expens
 import {login, logout} from '../src/actions/auth';
 import getVisibleExpanse from '../src/selectors/expenses'
 import {firebase} from './firebase/firebase'; // improt our firebase db
+import LoadingPage from './components/LoadingPage';
 
 import './styles/styles.scss'
 import 'normalize.css/normalize.css'
@@ -29,7 +30,7 @@ const renderApp = ()=>{
     }
 }
 
-ReactDOM.render(<p>Loading...</p>,document.getElementById('app'));
+ReactDOM.render(<LoadingPage />,document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged((user)=>{ // event hendler for every time user login/logout or refreshing the app
     if(user){ // if user login

@@ -1,11 +1,15 @@
+*{
+    box-sizing: border-box;
+}
 html {
     font-size: 62.5%; // settin up the font to 10px cuz the default is 16
 }
 
 body {
-    margin: 0;
+    color: $dark-grey;
     font-family: Helvetica, Arial, sans-serif;
     font-size: $m-size; // conver from 10 base px font-size to X1.6=26
+    line-height: 1.6;
 }
 
 button {

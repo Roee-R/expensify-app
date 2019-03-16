@@ -1,43 +1,95 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Expense list test should render ExpenseList with expenses 1`] = `
-<div>
-  <Connect(ExpenseListFilter) />
-  <ExpenseListItem
-    amount={123}
-    createdAt={11}
-    description="Gaz Bill"
-    id="1"
-    index={0}
-    key="1"
-    note="10/12"
-  />
-  <ExpenseListItem
-    amount={555}
-    createdAt={-259199989}
-    description="Electric Bill"
-    id="2"
-    index={1}
-    key="2"
-    note="2/12"
-  />
-  <ExpenseListItem
-    amount={323}
-    createdAt={259200011}
-    description="Credit Card"
-    id="3"
-    index={2}
-    key="3"
-    note="1/11"
-  />
+<div
+  className="content-container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-for-mobile"
+    >
+      Expenses
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Amount
+    </div>
+  </div>
+  <div
+    className="list-body"
+  >
+    <ExpenseListItem
+      amount={123}
+      createdAt={11}
+      description="Gaz Bill"
+      id="1"
+      index={0}
+      key="1"
+      note="10/12"
+    />
+    <ExpenseListItem
+      amount={555}
+      createdAt={-259199989}
+      description="Electric Bill"
+      id="2"
+      index={1}
+      key="2"
+      note="2/12"
+    />
+    <ExpenseListItem
+      amount={323}
+      createdAt={259200011}
+      description="Credit Card"
+      id="3"
+      index={2}
+      key="3"
+      note="1/11"
+    />
+  </div>
 </div>
 `;
 
 exports[`Expense list test should render expense lst with exmpty message 1`] = `
-<div>
-  <Connect(ExpenseListFilter) />
-  <h3>
-    No expenses
-  </h3>
+<div
+  className="content-container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-for-mobile"
+    >
+      Expenses
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Amount
+    </div>
+  </div>
+  <div
+    className="list-body"
+  >
+    <div
+      className="list-item list-item--message"
+    >
+      <span>
+        No Expenses
+      </span>
+    </div>
+  </div>
 </div>
 `;

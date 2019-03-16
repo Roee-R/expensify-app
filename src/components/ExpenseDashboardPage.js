@@ -6,15 +6,15 @@ import ExpensesSummary from './ExpensesSummary';
 
 import selectdExpenses from '../selectors/expenses';
 import selectExpensesTotal from '../selectors/expenses-total';
+import ExpenseListFilter from './ExpenseListFilter'; // filtering by name
 
 export const ExpenseDashboardPage = (props) =>{
     return(
     <div>
-    <h1>Wellcome to my DashBoard component</h1>
-    <button>TimeButton</button>
         <ExpensesSummary 
             size={props.expensesSize}
             sum={props.sum}/>
+        <ExpenseListFilter />    
         <ExpanseList
         />
     </div>    

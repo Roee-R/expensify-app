@@ -10,3 +10,4 @@ describe('Not found page test', ()=>{
         expect(wraper).toMatchSnapshot();
     })
 })
+

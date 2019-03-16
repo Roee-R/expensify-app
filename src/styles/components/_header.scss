@@ -1,0 +1,18 @@
+.header {
+    background: $dark-blue;
+}
+
+.header__content { // div content wraper inside content-container
+    align-items: center; // The align-items property specifies the default alignment for items inside the flexible container.
+    display: flex; // makes it easier to design flexible responsive layout structure without using float or positioning.
+    justify-content: space-between;
+    padding: $s-size 0;
+}
+
+.header__title{
+    color: whitesmoke;
+    text-decoration: none; // set off the defatult link decoration under-line
+    h1 {
+        margin: 0; //set off the h1 margin inside this class
+    }
+}

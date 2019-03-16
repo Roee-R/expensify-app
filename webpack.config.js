@@ -14,7 +14,7 @@ module.exports = (env) =>{ // the function will called with env veribe
   const isProdaction = env==='prodaction' // get the env from the script
 
   return {
-    entry: './src/app.js',
+    entry: ['@babel/polyfill','./src/app.js'],
     output: {
       path: path.resolve(__dirname, 'public', 'dist'),
       filename: 'bundle.js'

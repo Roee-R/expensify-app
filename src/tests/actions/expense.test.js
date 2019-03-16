@@ -17,8 +17,8 @@ import database from '../../firebase/firebase';
 
 describe('Expense actions', ()=>{
     const createMockStore = configureMockStore([thunk]); // add your middlewares like `redux-thunk`
-    const uid = 'thisIsMyUid'
-    const defaultAuthState = { auth: { uid } };
+    const uid = 'thisIsMyUid' // fake firebase uid 
+    const defaultAuthState = { auth: { uid } }; // object to check if user login
 
     beforeEach((done)=>{
         const expenseData = {};
@@ -37,7 +37,7 @@ describe('Expense actions', ()=>{
     })
 
     test('should remove expenses from firebase', (done)=>{
-        const store = createMockStore(defaultAuthState); // { auth: { uid } } = check if the our reducer auth change uid to our uid 
+        const store = createMockStore(defaultAuthState); // { auth: { uid } } = To set reducer auth uid to our uid and to check if getState() from expenses action is working  
         const id = expenses[1].id;
         store.dispatch(startRemoveExpense({ id })).then(()=>{
             const action = store.getActions();
@@ -170,3 +170,11 @@ describe('Expense actions', ()=>{
         })
     })
 })
+
+
+
+
+
+
+
+

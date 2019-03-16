@@ -1,0 +1,22 @@
+.box-layout { // for the full page container
+    align-items: center;
+    background: url('/images/bg.jpg'); // it not relative path because the browser have access just to the public directory
+    background-size: cover;
+    height: 100vh; // 100% of viewport height
+    display: flex;
+    justify-content: center;
+    width: 100vw; // 100% of viewport witdh 
+}
+
+.box-layout__box{ // for the box container
+    background: fade-out(white, $amount: .3);
+    border-radius: 3px;
+    text-align: center;
+    width: 25rem;
+    padding: $l-size $m-size;
+}
+
+.box-layout__title { // for the title container
+    margin: 0 0 $m-size 0;
+    line-height: 1;
+}

@@ -15,7 +15,7 @@ describe('ExpensesSummary tests', ()=>{
         sum=numeral(111).format('$0,0.00');  
         const returnedText = `Viewing 3 expenses totalling $1.11`          
         expect(wraper).toMatchSnapshot();
-        expect(wraper.find('p').text()).toBe(returnedText);
+        expect(wraper.find('h1').text()).toBe(returnedText);
     })
 
     test('should retrun summary of one expense',()=>{    
@@ -26,6 +26,6 @@ describe('ExpensesSummary tests', ()=>{
         sum=numeral(11).format('$0,0.00');            
         const returnedText = `Viewing 1 expense totalling $0.11`    
         expect(wraper).toMatchSnapshot();
-        expect(wraper.find('p').text()).toBe(returnedText);
+        expect(wraper.find('h1').text()).toBe(returnedText);
     })
 })
